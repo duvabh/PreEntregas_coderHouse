@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: burlywood;
+}
+h1 {
+  text-align: center;
+}
+
+main {
+  grid-area: main;
+  margin: auto;
+}
+
+img {
+  width: max-content;
+}
+
+footer {
+  grid-area: footer;
+  background-color: burlywood;
+  text-align: center;
+}
