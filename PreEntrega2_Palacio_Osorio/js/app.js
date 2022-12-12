@@ -1,19 +1,59 @@
-let nombre = prompt("¡Bienvenido! \n ¿como te llamas?");
-alert(`Hola ${nombre}, para continuar dale clic en aceptar.`);
-let menu = parseInt(
-  prompt(
-    "elije la opción del menú que deseas utilizar: \n 1. Camisetas \n 2. Jeans \n 3. Accesorios \n 4. Salir"
-  )
-);
-
-function promedioNotas() {
-  let totalNotas = 0;
-  let calFinal = 0;
-  let nuMate = parseInt(prompt("Ingrese la cantidad de notas a promediar"));
-  for (let i = 1; i < nuMate; i++) {
-    let cal = parseInt(prompt("Introduce la calificacion de la materia " + i));
-    totalNotas = totalNotas + cal;
+// Declaración de variables
+class creaProducto {
+  constructor(marca, talla, precio) {
+    this.marca = marca.toUpperCase();
+    this.talla = talla.toUpperCase();
+    this.precio = parseFloat(precio);
   }
-  calFinal = totalNotas / nuMate;
-  return calFinal;
 }
+
+// Array
+
+const carrito = [];
+
+// Función
+
+function agregarProducto() {
+  let marca = "";
+  let talla = "";
+  let precio = 0;
+  let continuar = "";
+
+  do {
+    marca = prompt("Indica la marca del producto");
+    talla = prompt("Ingrese la talla del producto agregar");
+    precio = parseFloat(prompt("Ingrese el valor del producto $$$"));
+    carrito.push(new creaProducto(marca, talla, precio)); // Agregar productos al array
+
+    continuar = prompt(
+      "Desea seguir agregando productos escibe SI, en lo contrario ingresa NO"
+    );
+    while (true) {
+      //Validador de opciones de ingreso
+      if (continuar == "si") {
+        break;
+      } else if (continuar == "no") {
+        break;
+      } else {
+        alert("Opción invalida, vuelve a intentar");
+        continuar = prompt("Desea seguir agregando productos");
+      }
+    }
+  } while (continuar == "si");
+  {
+    console.log("Tus productos agregados son: ");
+    carrito.forEach((prod) => {
+      console.log(prod);
+    });
+  }
+}
+
+agregarProducto();
+
+const precios = carrito.map((producto) => producto.precio);
+
+const total = precios.reduce(
+  (acumulador, elemento) => acumulador + elemento,
+  0
+);
+alert(`El total de productos agregados es: $${total}`);
