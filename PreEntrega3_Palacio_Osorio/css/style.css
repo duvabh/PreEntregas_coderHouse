@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  background: #e3e3d8;
+  font-family: sans-serif;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: burlywood;
+}
+h1 {
+  text-align: center;
+}
+/* Inicio cards */
+.block_cards {
+  display: flex;
+}
+.block_cards .card {
+  margin: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  background-color: rgba(128, 128, 128, 0.123);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card h1 {
+  font-size: 20px;
+}
+.card img {
+  height: 60%;
+  width: 100%;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+/* Fin cards */
+
+/* Registro de compra */
+.contenido {
+  grid-area: main;
+  padding: 50px 0;
+  margin: auto;
+}
+
+.formulario h2 {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 0;
+  color: red;
+}
+
+.formulario .fila {
+  display: flex;
+}
+
+.formulario .col_form {
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.formulario .col_form input,
+.formulario .col_form textarea {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 18px;
+}
+
+.formulario span {
+  color: black;
+  font-size: 24px;
+  text-align: center;
+}
+
+.formulario button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid burlywood;
+  width: fit-content;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 22px;
+  font-size: 16px;
+  color: burlywood;
+  position: relative;
+  z-index: 10;
+}
+
+.formulario button:hover {
+  color: #fff;
+  background-color: burlywood;
+}
+
+footer {
+  grid-area: footer;
+  background-color: burlywood;
+  text-align: center;
+}
